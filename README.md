@@ -1,15 +1,15 @@
-# Setup !
+## Setup !
 Install __TS__ gobally on your machine
 
 ```bash
 $ npm i -g typescript
 ```
-# Check version .
+## Check version .
 ```bash
 $ tsc -V
 ```
 ---
-# Create the tscofing.json file .
+## Create the tscofing.json file .
 ```
 $ tsc --init
 ```
@@ -18,7 +18,7 @@ __Setup the the root (to compile TS files) directories in__  tsconfig.json
 "rootDir":"./src",
 "outDir" : ./public",
 ```
-# Compiling
+## Compiling
 compile a specefic __TS__ file into as __JS__ file of hte same name, into the same directory (i.e. index.ts to index.js).
 ```
 $ tsc index.ts
@@ -36,7 +36,7 @@ if no file is specified, tsc will compile all __TS__ files in  the "rootDir" and
 ```
 $ tsc -w
 ```
-# Strict Mode
+## Strict Mode
 In tsconfig.json, is recommended to set strict  mode is No Implicit Any;
 ```typescript
 //Error: Parameter 'a' implicitly has an 'any' type
@@ -46,35 +46,35 @@ function logName(a){
 
 ```
 
-# Primitive Types
+## Primitive Types
 there 7 primitive types in **JS:** string number, bigInt, boolean, undefined, null, symbol.
 
 **Explicit type annotation**
 ```typescript
 let firstname: string = 'superuser'
 ```
-# Union Types
+## Union Types
 A variable that can be assigned more than one type
 ```typescript
 let age: number | string ;
 age = 26;
 age = "26";
 ```
-# Dynamic Types 
+## Dynamic Types 
 the any type basically reverts **TS** back to **JS**
 
 ```typescript
 let age: any = 100;
 age = true;
 ```
-# Literal Types
+## Literal Types
 We can refer to specific strings & numbers in type positions
 ```typescript
 let direction: 'UP' | 'DOWN';
 direction = 'UP';
 ```
 
-# Objects
+## Objects
 objects in **TS** must have all the correct properties & value types
 ```typescript
 let person:{
@@ -88,20 +88,20 @@ person ={
 person.age = 26; //Error - no age prop on person object
 person.isProgrammer = 'yes'; //Error - should be boolean
 ```
-# Arrays
+## Arrays
  We can define what kind of data an array can contain
  ```typescript
  let id: number[] = [];
  id.push(1);
  id.push("2") //Error
  ```
- # Tuples
+ ## Tuples
  A tuple is special types of array with fixed size & known data types each index. They're stricter than regular arrays.
  ```typescript
  let options: [string, number];
  options = ['UP', 10];
  ```
-# Functions
+## Functions
 we can define the types of the arguments and the return. Below, **:string** could be omitted because **TS** would infer the return type.
 ```typescript
 function circle(diameter: number) : string {
@@ -123,14 +123,14 @@ console.log('Hi' + name);
 
 sayHi('Superuser'); //Hi Superuser
 ```
-# Type Aliases
+## Type Aliases
 Allow you to create a new name for an existing type. They can help to reduce code duplication. They can help to reduce code duplication. They're similar to interfaces, but can also describe primitive types.
 ```typescript
 type StringOrNum = string | number;
 let id: StringOrNum = 24;
 
 ```
-# Interfaces
+## Interfaces
 Interfaces are used to describe objects.
 Interfaces can always be reopened & extended, unlike Type Aliases. Notices that **'name'** is **'readonly'**
 ```typescript
@@ -169,14 +169,14 @@ interface Dog extends Animal {
     breed: string;
 }
 ```
-# The DOM & Type Casting
+## The DOM & Type Casting
 **TS** does't have access to the DOM, so use the non-null operator, **!** to tell **TS** the expression isn't null or undefined
 
 ```typescript
 const form = document.getElementById('signup-form') as HTMLFormElement;
 
 ```
-# Generics
+## Generics
 
 Generics allow fo type safety in components where the arguments & return types are unknown ahead of time. 
 ```typescript
@@ -212,7 +212,7 @@ let labrador: Dog<string> = {
     treats:['turkey','haggis']
 };
 ```
-# Enums
+## Enums
 A set of related values, as a set of descriptive constants
 ```typescript
 enum ResourceType {
@@ -224,7 +224,7 @@ ResourceType.BOOK; // 0
 ResourceType.FILE; // 1
 
 ```
-# Narrowing
+## Narrowing
 Occurs when a variables moves form a less precise type to a more precise type
 ```typescript
 let age = getUserAge();
